@@ -46,6 +46,9 @@ class App extends Component {
 					    "size": "",
 					    "vegetarian": true}
 		this.setState({edit_pizza:empty_pizza})
+		fetch("http://localhost:3000/pizzas")
+		.then(res => res.json())
+		.then(res => this.setState({pizzas: res}))
 	}
 
   render() {
